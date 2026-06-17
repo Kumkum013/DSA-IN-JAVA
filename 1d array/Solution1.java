@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+class Solution1 {
+    public boolean isSorted(ArrayList<Integer> nums) {
+        for (int i=0 ; i<nums.size() - 1 ; i++)
+        {
+            if(nums.get(i) > nums.get(i+1))
+            {
+                return false ;
+
+            }
+
+        }
+         return true ;
+    }
+    public static void main(String[] args) {
+        Solution1 s = new Solution1();
+    
+     ArrayList<Integer> nums = new ArrayList<>() ;
+     nums.add(1);
+     nums.add(9);
+     nums.add(6);
+     nums.add(8);
+     nums.add(5);
+     nums.add(4);
+     nums.add(0);
+
+      System.out.println(s.isSorted(nums));
+     
+}
+}
