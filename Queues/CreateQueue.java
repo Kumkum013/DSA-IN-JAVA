@@ -55,6 +55,40 @@ public class CreateQueue{
         System.out.println("Successfully inserted " + value + " in the queue");
 
     }
+
+}
+public int deQueue()
+{
+    if(isEmpty())
+    {
+        System.out.println("the queue is empty");
+        return -1;
+    }
+    else{
+        int result1 = arr[beginningOfQueue];
+        beginningOfQueue++;
+        if(beginningOfQueue > topOfQueue)
+        {
+            beginningOfQueue = topOfQueue = -1;
+        }
+        return result1 ;
+    }
+}
+public int peek()
+{
+    if(!isEmpty())
+    {
+        return arr[beginningOfQueue];
+    }
+    else{
+       System.out.println("the queue is empty"); 
+       return -1 ;
+    }
+}
+public void deleteQueue()
+{
+    arr = null ;
+    System.out.println("the queue is successfully deleted");
 }
     public static void main(String[] args)
     {
@@ -65,6 +99,12 @@ public class CreateQueue{
         q.enQueue(2);
         q.enQueue(3);
         q.enQueue(4);
+        int result1 = q.deQueue();
+        System.out.println(result1);
+        int result2 = q.peek();
+        System.out.println(result2);
+        q.deleteQueue();
+
 
         
     }
