@@ -1,12 +1,19 @@
 
-class QueueLinkedList {
+
+
+public class QueueLinkedList {
+
+  
+public class Node {
+  public int value;
+  public Node next;
+}
+
+
+public class LinkedList {
   public Node head;
   public Node tail;
   public int size;
-
-  public QueueLinkedList() {
-    System.out.println("the queue is successfully created");
-  }
 
   public Node createSinglyLinkedList(int nodeValue) {
     head = new Node();
@@ -100,11 +107,11 @@ class QueueLinkedList {
       if (tempNode == head) {
         tail = head = null;
         size--;
-      } else {
-        tempNode.next = null;
-        tail = tempNode;
-        size--;
+        return;
       }
+      tempNode.next = null;
+      tail = tempNode;
+      size--;
     } else {
       Node tempNode = head;
       for (int i = 0; i <location-1; i++) {
@@ -119,17 +126,71 @@ class QueueLinkedList {
 public void deleteSLL() {
   head = null;
   tail = null;
-  size = 0;
   System.out.println("The SLL deleted successfully");
 }
 
+}
+
+
+  LinkedList list;
+
+  public QueueLinkedList() {
+    list = new LinkedList();
+    System.out.println("The Queue is successfully created");
+  }
+
+  // isEmpty
+  public boolean isEmpty() {
+    if (list.head == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //enQueue
+  public void enQueue(int value) {
+    list.insertInLinkedList(value, list.size);
+    System.out.println("Successfully inserted "+value+" in the queue");
+  }
+
+  // deQueue
+  public int deQueue() {
+    int value = -1;
+    if (isEmpty()) {
+      System.out.println("The Queue is is Empty");
+    } else {
+      value = list.head.value;
+      list.deletionOfNode(0);
+    }
+    return value;
+  }
+
+  //peek
+  public int peek() {
+    if (isEmpty()) {
+      System.out.println("The Queue is Empty");
+      return -1;
+    } else {
+      return list.head.value;
+    }
+  }
+
+  //delete
+  public void deleteQueue() {
+    list.head = null;
+    list.tail = null;
+    System.out.println("The Queue is successfully deleted");
+  }
 public static void main(String[] args) {
-  QueueLinkedList sll = new QueueLinkedList();
-}
+    QueueLinkedList q = new QueueLinkedList();
+    boolean result = q.isEmpty();
+    System.out.println(result);
+    q.enQueue(20);
+    q.enQueue(30);
+    q.enQueue(40);
+      int result1= q.peek();
+    System.out.println(result1);
 
-public class Node {
-  public int value;
-  public Node next;
 }
-
 }
