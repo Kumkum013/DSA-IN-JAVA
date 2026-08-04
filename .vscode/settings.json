@@ -1,3 +1,7 @@
 {
-    "editor.inlineSuggest.edits.showLongDistanceHint": false
+    "editor.inlineSuggest.edits.showLongDistanceHint": false,
+    "java.project.sourcePaths": [
+        "striver sheet"
+    ],
+    "java.project.outputPath": "bin"
 }

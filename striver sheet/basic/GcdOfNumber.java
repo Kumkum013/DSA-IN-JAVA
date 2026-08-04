@@ -1,3 +1,5 @@
+package basic;
+
 public class GcdOfNumber {
     public int gcd(int n1, int n2) {
         int answer = 1;

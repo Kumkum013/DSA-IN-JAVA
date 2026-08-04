@@ -1,3 +1,5 @@
+package basic;
+
 class ReverseInteger {
     public static void main(String[] args) {
         ReverseInteger obj = new ReverseInteger();
